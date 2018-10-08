@@ -106,14 +106,24 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JamesXBY的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="并查集是一种用来维护多个集合（或对象）之间集合关系的数据结构，在很多题目中可以直接应用。它也经常被用在图论的算法优化中，是一种简单实用，又十分重要的数据结构 题目引入例题1有n（1 &amp;lt;= n &amp;lt;= 20）个元素，分别属于编号为1-n的集合。现有t（1 &amp;lt;= t &amp;lt;= 20）次询问，每次询问对应如下两种操作：A：将两个元素所在的集合合并B：询问两个元素是否在同一集合中 解答：">
+<meta name="keywords" content="NOIp,数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构：并查集（1）：基本概念与实现">
+<meta property="og:url" content="http://yoursite.com/2018/10/07/数据结构：并查集/index.html">
 <meta property="og:site_name" content="JamesXBY的博客">
+<meta property="og:description" content="并查集是一种用来维护多个集合（或对象）之间集合关系的数据结构，在很多题目中可以直接应用。它也经常被用在图论的算法优化中，是一种简单实用，又十分重要的数据结构 题目引入例题1有n（1 &amp;lt;= n &amp;lt;= 20）个元素，分别属于编号为1-n的集合。现有t（1 &amp;lt;= t &amp;lt;= 20）次询问，每次询问对应如下两种操作：A：将两个元素所在的集合合并B：询问两个元素是否在同一集合中 解答：">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.imgur.com/fBI0lY7.jpg">
+<meta property="og:image" content="https://i.imgur.com/nzBzyFa.jpg">
+<meta property="og:updated_time" content="2018-10-08T16:11:27.114Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JamesXBY的博客">
+<meta name="twitter:title" content="数据结构：并查集（1）：基本概念与实现">
+<meta name="twitter:description" content="并查集是一种用来维护多个集合（或对象）之间集合关系的数据结构，在很多题目中可以直接应用。它也经常被用在图论的算法优化中，是一种简单实用，又十分重要的数据结构 题目引入例题1有n（1 &amp;lt;= n &amp;lt;= 20）个元素，分别属于编号为1-n的集合。现有t（1 &amp;lt;= t &amp;lt;= 20）次询问，每次询问对应如下两种操作：A：将两个元素所在的集合合并B：询问两个元素是否在同一集合中 解答：">
+<meta name="twitter:image" content="https://i.imgur.com/fBI0lY7.jpg">
 
+
+  
 
 
   <link rel="alternate" href="/atom.xml" title="JamesXBY的博客" type="application/atom+xml" />
@@ -121,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/07/数据结构：并查集/"/>
 
 
 
@@ -131,7 +141,7 @@
   };
 </script>
 
-  <title>JamesXBY的博客</title>
+  <title>数据结构：并查集（1）：基本概念与实现 | JamesXBY的博客</title>
   
 
 
@@ -178,8 +188,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-  page-home">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,7 +225,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
     <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
   </li>
@@ -276,9 +285,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -310,11 +319,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/07/数据结构：并查集/" itemprop="url">
-                  数据结构：并查集（1）：基本概念与实现
-                </a>
+          <h2 class="post-title" itemprop="name headline">数据结构：并查集（1）：基本概念与实现
               
             
           </h2>
@@ -407,9 +412,7 @@
       
 
       
-        
-          
-            <p>并查集是一种用来维护多个集合（或对象）之间集合关系的数据结构，在很多题目中可以直接应用。它也经常被用在图论的算法优化中，是一种简单实用，又十分重要的数据结构</p>
+        <p>并查集是一种用来维护多个集合（或对象）之间集合关系的数据结构，在很多题目中可以直接应用。它也经常被用在图论的算法优化中，是一种简单实用，又十分重要的数据结构</p>
 <h1 id="题目引入"><a href="#题目引入" class="headerlink" title="题目引入"></a>题目引入</h1><h2 id="例题1"><a href="#例题1" class="headerlink" title="例题1"></a>例题1</h2><p>有n（1 &lt;= n &lt;= 20）个元素，分别属于编号为1-n的集合。现有t（1 &lt;= t &lt;= 20）次询问，每次询问对应如下两种操作：<br>A：将两个元素所在的集合<strong>合并</strong><br>B：<strong>询问</strong>两个元素是否在同一集合中</p>
 <p>解答：直接开数组模拟<br>对于操作A：遍历所有数组，寻找两个元素所在的集合，将一个集合中的元素全部移入另一个集合<br>对于操作B：依然遍历寻找集合，判断集合编号是否相同</p>
 <h2 id="例题2"><a href="#例题2" class="headerlink" title="例题2"></a>例题2</h2><p>题目要求不变，数据范围改为：1 &lt;= n &lt;= 10000, 1 &lt;= t &lt;= 200000</p>
@@ -430,8 +433,6 @@
 <p>我们的想法是正确的，但是遗漏了一点：如果x和y本来就在一个集合中怎么办？如果按我们刚才的想法操作，那么并查集就可能会变成一个有环图，再次find的时候就会死循环<br>所以，我们还要先判断x, y是否属于同一个集合，如果属于，则不进行任何操作<br>到了这里，我们再回想之前的合并操作：我们直接将t并到了y上。其实，我们可以<strong>将t并在y的最高祖先上</strong>，不难发现这样的操作和刚才所能达到的效果是相同的。但是，之前的操作会使下次find的时间增加：合并后，如果find某个原来在x这棵树上的结点，那么它一定要先到y，再从y找到y的最高祖先。而如果直接合并到y的最高祖先，那么就可以跳过y到它的最高祖先这一段路径，时间复杂度减少O(y的深度)<br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//合并操作</span><br><span class="line">void merge(int x, int y) &#123;</span><br><span class="line">    x = find(x);</span><br><span class="line">    y = find(y);            //将x, y分别赋值为他们各自的最高祖先</span><br><span class="line">    if(x == y)              //如果已经在一个集合，直接返回</span><br><span class="line">        return;</span><br><span class="line">    fa[x] = y;              //将x的最高祖先并到y的最高祖先</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这就是并查集的基本操作，但是，如果数据喜（bian）人（tai），这样朴素的做法还是会超时。下一节将重点介绍并查集的优化策略</p>
 
-          
-        
       
     </div>
 
@@ -449,14 +450,22 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/NOIp/" rel="tag"># NOIp</a>
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -466,14 +475,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -494,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -593,6 +612,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目引入"><span class="nav-number">1.</span> <span class="nav-text">题目引入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#例题1"><span class="nav-number">1.1.</span> <span class="nav-text">例题1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例题2"><span class="nav-number">1.2.</span> <span class="nav-text">例题2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#储存"><span class="nav-number">3.1.</span> <span class="nav-text">储存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本操作"><span class="nav-number">3.2.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查询"><span class="nav-number">3.2.1.</span> <span class="nav-text">查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并"><span class="nav-number">3.2.2.</span> <span class="nav-text">合并</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -732,6 +767,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
 
   
 

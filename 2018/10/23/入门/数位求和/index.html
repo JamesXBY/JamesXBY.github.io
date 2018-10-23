@@ -106,21 +106,18 @@
 
 
 
-  <meta name="description" content="并查集是一种用来维护多个集合（或对象）之间集合关系的数据结构，在很多题目中可以直接应用。它也经常被用在图论的算法优化中，是一种简单实用，又十分重要的数据结构 题目引入例题1有n（1 &amp;lt;= n &amp;lt;= 20）个元素，分别属于编号为1-n的集合。现有t（1 &amp;lt;= t &amp;lt;= 20）次询问，每次询问对应如下两种操作：A：将两个元素所在的集合合并B：询问两个元素是否在同一集合中 解答：">
-<meta name="keywords" content="NOIp,数据结构">
+  <meta name="description" content="题目描述：输入一个整数n，输出它的各位数字之和   输入输出格式：输入格式：输入一个整数n   输出格式：输出一个整数，表示n的各位数字之和   样例输入输出样例输入#1：13 样例输出#1：13 样例输入#2：    1136 样例输出#2：110 解析首先我们考虑一个问题：如何获取一个整数的第n位？如果你没有思路，我们先把问题特殊化：如何获取一个整数的第1位，也就是个位数字？首先，我们先详细介">
+<meta name="keywords" content="入门,循环">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构：并查集（1）：基本概念与实现">
-<meta property="og:url" content="http://yoursite.com/2018/10/07/NOIp/并查集（1）/index.html">
+<meta property="og:title" content="数位求和">
+<meta property="og:url" content="http://yoursite.com/2018/10/23/入门/数位求和/index.html">
 <meta property="og:site_name" content="JamesXBY的博客">
-<meta property="og:description" content="并查集是一种用来维护多个集合（或对象）之间集合关系的数据结构，在很多题目中可以直接应用。它也经常被用在图论的算法优化中，是一种简单实用，又十分重要的数据结构 题目引入例题1有n（1 &amp;lt;= n &amp;lt;= 20）个元素，分别属于编号为1-n的集合。现有t（1 &amp;lt;= t &amp;lt;= 20）次询问，每次询问对应如下两种操作：A：将两个元素所在的集合合并B：询问两个元素是否在同一集合中 解答：">
+<meta property="og:description" content="题目描述：输入一个整数n，输出它的各位数字之和   输入输出格式：输入格式：输入一个整数n   输出格式：输出一个整数，表示n的各位数字之和   样例输入输出样例输入#1：13 样例输出#1：13 样例输入#2：    1136 样例输出#2：110 解析首先我们考虑一个问题：如何获取一个整数的第n位？如果你没有思路，我们先把问题特殊化：如何获取一个整数的第1位，也就是个位数字？首先，我们先详细介">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://i.imgur.com/fBI0lY7.jpg">
-<meta property="og:image" content="https://i.imgur.com/nzBzyFa.jpg">
-<meta property="og:updated_time" content="2018-10-09T15:48:17.872Z">
+<meta property="og:updated_time" content="2018-10-23T15:51:17.324Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构：并查集（1）：基本概念与实现">
-<meta name="twitter:description" content="并查集是一种用来维护多个集合（或对象）之间集合关系的数据结构，在很多题目中可以直接应用。它也经常被用在图论的算法优化中，是一种简单实用，又十分重要的数据结构 题目引入例题1有n（1 &amp;lt;= n &amp;lt;= 20）个元素，分别属于编号为1-n的集合。现有t（1 &amp;lt;= t &amp;lt;= 20）次询问，每次询问对应如下两种操作：A：将两个元素所在的集合合并B：询问两个元素是否在同一集合中 解答：">
-<meta name="twitter:image" content="https://i.imgur.com/fBI0lY7.jpg">
+<meta name="twitter:title" content="数位求和">
+<meta name="twitter:description" content="题目描述：输入一个整数n，输出它的各位数字之和   输入输出格式：输入格式：输入一个整数n   输出格式：输出一个整数，表示n的各位数字之和   样例输入输出样例输入#1：13 样例输出#1：13 样例输入#2：    1136 样例输出#2：110 解析首先我们考虑一个问题：如何获取一个整数的第n位？如果你没有思路，我们先把问题特殊化：如何获取一个整数的第1位，也就是个位数字？首先，我们先详细介">
 
 
 
@@ -129,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/07/NOIp/并查集（1）/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/23/入门/数位求和/"/>
 
 
 
@@ -139,7 +136,7 @@
   };
 </script>
 
-  <title>数据结构：并查集（1）：基本概念与实现 | JamesXBY的博客</title>
+  <title>数位求和 | JamesXBY的博客</title>
   
 
 
@@ -300,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/07/NOIp/并查集（1）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/23/入门/数位求和/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JamesXBY">
@@ -317,7 +314,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">数据结构：并查集（1）：基本概念与实现
+          <h2 class="post-title" itemprop="name headline">数位求和
               
             
           </h2>
@@ -342,24 +339,12 @@
                 
               
 
-              <time title="创建时间：2018-10-07 00:47:26" itemprop="dateCreated datePublished" datetime="2018-10-07T00:47:26+08:00">2018-10-07</time>
+              <time title="创建时间：2018-10-23 22:18:25 / 修改时间：23:51:17" itemprop="dateCreated datePublished" datetime="2018-10-23T22:18:25+08:00">2018-10-23</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-10-09 23:48:17" itemprop="dateModified" datetime="2018-10-09T23:48:17+08:00">2018-10-09</time>
               
             
           </span>
@@ -376,7 +361,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/NOIp/" itemprop="url" rel="index"><span itemprop="name">NOIp</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/入门/" itemprop="url" rel="index"><span itemprop="name">入门</span></a></span>
 
                 
                 
@@ -410,26 +395,20 @@
       
 
       
-        <p>并查集是一种用来维护多个集合（或对象）之间集合关系的数据结构，在很多题目中可以直接应用。它也经常被用在图论的算法优化中，是一种简单实用，又十分重要的数据结构</p>
-<h1 id="题目引入"><a href="#题目引入" class="headerlink" title="题目引入"></a>题目引入</h1><h2 id="例题1"><a href="#例题1" class="headerlink" title="例题1"></a>例题1</h2><p>有n（1 &lt;= n &lt;= 20）个元素，分别属于编号为1-n的集合。现有t（1 &lt;= t &lt;= 20）次询问，每次询问对应如下两种操作：<br>A：将两个元素所在的集合<strong>合并</strong><br>B：<strong>询问</strong>两个元素是否在同一集合中</p>
-<p>解答：直接开数组模拟<br>对于操作A：遍历所有数组，寻找两个元素所在的集合，将一个集合中的元素全部移入另一个集合<br>对于操作B：依然遍历寻找集合，判断集合编号是否相同</p>
-<h2 id="例题2"><a href="#例题2" class="headerlink" title="例题2"></a>例题2</h2><p>题目要求不变，数据范围改为：1 &lt;= n &lt;= 10000, 1 &lt;= t &lt;= 200000</p>
-<p>解答：暴力模拟肯定超时，需要并查集</p>
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>并查集是由若干树（又称森林）组成的。起始时所有结点无儿子，且父亲为它本身。  </p>
-<p><div align="center"> <img src="https://i.imgur.com/fBI0lY7.jpg" alt=""><div align="left"><br>在合并操作后，如果两个节点属于同一棵树，那么他们属于同一个集合。换而言之，一棵树的所有节点构成一个集合<br>如图，将1合并到2后，1，2构成一棵树，则1，2属于同一个集合</div></div></p>
-<p><div align="center"> <img src="https://i.imgur.com/nzBzyFa.jpg" alt=""><div align="left"></div></div></p>
-<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="储存"><a href="#储存" class="headerlink" title="储存"></a>储存</h2><p>我们一般使用数组来维护并查集：<br>定义一个fa（father）数组，记录每个结点的父节点<br>根据定义，每个结点的父亲需初始化为它自己，即fa[i] = i<br>代码如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化部分</span></span><br><span class="line"><span class="keyword">int</span> fa[<span class="number">100005</span>], n;</span><br><span class="line"><span class="comment">//n：集合个数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        fa[i] = i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><p>从字面上就能够看出，并查集的基本操作就是“并”和“查”，也就是例题中的两种操作<br>我们先来研究怎么“查”  </p>
-<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>根据定义，我们不难得到这样的性质：</p>
+        <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><p>输入一个整数n，输出它的各位数字之和  </p>
+<h1 id="输入输出格式："><a href="#输入输出格式：" class="headerlink" title="输入输出格式："></a>输入输出格式：</h1><h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><p>输入一个整数n  </p>
+<h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><p>输出一个整数，表示n的各位数字之和  </p>
+<h1 id="样例输入输出"><a href="#样例输入输出" class="headerlink" title="样例输入输出"></a>样例输入输出</h1><p>样例输入#1：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure></p>
+<p>样例输出#1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure></p>
+<p>样例输入#2：   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">136</span><br></pre></td></tr></table></figure>
+<p>样例输出#2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10</span><br></pre></td></tr></table></figure></p>
+<h1 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h1><p>首先我们考虑一个问题：如何获取一个整数的第n位？<br>如果你没有思路，我们先把问题特殊化：如何获取一个整数的第1位，也就是个位数字？<br>首先，我们先详细介绍一下模运算和整除运算：<br>模运算，读作模，C++中的运算符为“%”。它的意义便是小学数学中的取余数<br>整除运算，读作整除，C++中的运算符为“/”（想不起来翻笔记去）。它的意义便是小学数学中和取余数一起出现的那个。。。<br>带大家回顾一下小学的带余数除法吧：<br>15 ÷ 2 = 7 …… 1<br>8 ÷ 4 = 2 …… 0<br>4 ÷ 9 = 0 …… 4<br>ps：如果你感觉自己上了假小学，那我没办法救你的呀。。。<br>所以，将上面的式子用我们今天的知识写出来，就是这样的：<br>15 / 2 = 7&#8195;15 % 2 = 1<br>8 / 4 = 2&#8195;8 % 4 = 0<br>4 / 9 = 0&#8195;4 % 9 = 4<br>为什么要提模运算呢？<br>我们发现，<strong>一个数的个位数等于这个数模10</strong><br>eg：4 % 10 = 10<br>256 % 10 = 6<br>是不是很神奇！<br>但是我们的问题还是没有解决，我们只获取了个位，那其他位的数字怎么办？<br>我比较懒，所以我想到了：如果其他位也能变成个位该多好。。。<br>所以，现在我们思考，怎么把其他位变为个位<br>我们想到了整除运算：<br>eg：46 / 10 = 4<br>2775 / 100 = 27<br>天哪，一个整数整除10之后，十位变成了个位；整除100后，百位变成了个位；<strong>整除$ 10^{i - 1} $之后，第i位变成了个位</strong>！<br>综上，如果我们把一个整数n从右向左数第i位数字记为ai的话，则：</p>
 <blockquote>
-<p>在并查集中，每个结点有且仅有一个最高祖先（即树的根），这个祖先的父亲是他自己 </p>
+<p>$ ai = (n / 10^{i-1}) $ % $ 10 $  </p>
 </blockquote>
-<p>有了这样的性质，我们不难发现，判断两个结点是否属于同一个集合，等价于判断他们的最高祖先是否相同<br>那么，我们的核心任务便成了如何找到每个结点的最高祖先<br>我们只需要根据fa数组，寻找它的父亲，再寻找父亲的父亲，再寻找父亲的父亲的父亲……<strong>直到找到一个结点，它的父亲是它自己</strong>，那么我们就找到了最高祖先。<br>对于查询操作，我们常用递归写法，代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//查找部分</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x == fa[x])          <span class="comment">//x == fa[x]当且仅当x为最高祖先</span></span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    <span class="keyword">return</span> find(fa[x]);     <span class="comment">//递归找爸爸。。。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>综上所述，我们判断两个结点x, y是否属于同一个集合，只需判断find(x)和find(y)是否相等即可</p>
-<h3 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h3><p>那我们怎么将两个结点x, y所在的集合合并为一个集合呢？<br>我们只有一个fa数组，当然还是从它入手了<br>我们发现，除了根结点的fa可以用，其他的fa都不是空闲的：随意改变这些fa的值会让以它为根的子树从原集合脱离<br>所以我们还是要找到根，也就是最高祖先。之前的find()便派上用场了<br>如果我们现在找到了x的最高祖先t，那么我们只需要让fa[t] = y，以t为根的这棵树就成为了y这棵树的子树，那么根据定义，这两个集合便成为一个集合了<br>代码如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//合并操作（有漏洞）</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = find(x);</span><br><span class="line">    fa[t] = y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>我们的想法是正确的，但是遗漏了一点：如果x和y本来就在一个集合中怎么办？如果按我们刚才的想法操作，那么并查集就可能会变成一个有环图，再次find的时候就会死循环<br>所以，我们还要先判断x, y是否属于同一个集合，如果属于，则不进行任何操作<br>到了这里，我们再回想之前的合并操作：我们直接将t并到了y上。其实，我们可以<strong>将t并在y的最高祖先上</strong>，不难发现这样的操作和刚才所能达到的效果是相同的。但是，之前的操作会使下次find的时间增加：合并后，如果find某个原来在x这棵树上的结点，那么它一定要先到y，再从y找到y的最高祖先。而如果直接合并到y的最高祖先，那么就可以跳过y到它的最高祖先这一段路径，时间复杂度减少O(y的深度)<br>代码如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//合并操作</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    x = find(x);</span><br><span class="line">    y = find(y);            <span class="comment">//将x, y分别赋值为他们各自的最高祖先</span></span><br><span class="line">    <span class="keyword">if</span>(x == y)              <span class="comment">//如果已经在一个集合，直接返回</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    fa[x] = y;              <span class="comment">//将x的最高祖先并到y的最高祖先</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这就是并查集的基本操作，但是，如果数据喜（bian）人（tai），这样朴素的做法还是会超时。下一节将重点介绍并查集的优化策略</p>
+<p>小白：老师，指数怎么算。。<br>我们可以不用算指数<br>结合上面的知识，观察并理解下面一个过程：<br>1256 % 10 = <strong>6</strong>&#8195;1256 / 10 = 125<br>125 % 10 = <strong>5</strong>&#8195;125 / 10 = 12<br>12 % 10 = <strong>2</strong>&#8195;12 / 10 = 1<br>1 % 10 = <strong>1</strong>&#8195;1 / 10 = 0<br>如果你理解了这样的过程，那么你就能理解下面的代码了</p>
+<h1 id="标程"><a href="#标程" class="headerlink" title="标程"></a>标程</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, ans = <span class="number">0</span>;         <span class="comment">//ans累加求得各位数字之和</span></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">while</span>(n) &#123;              <span class="comment">//等价于：while(n != 0)，判断是否已经累加完所有数字</span></span><br><span class="line">        ans += n % <span class="number">10</span>;      <span class="comment">//取当前的各位数字，累加到ans</span></span><br><span class="line">        n /= <span class="number">10</span>;            <span class="comment">//等价于：n = n / 10</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -450,9 +429,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/NOIp/" rel="tag"># NOIp</a>
+            <a href="/tags/入门/" rel="tag"># 入门</a>
           
-            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+            <a href="/tags/循环/" rel="tag"># 循环</a>
           
         </div>
       
@@ -465,15 +444,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/10/17/入门/寻找最大值/" rel="next" title="寻找最大值">
+                <i class="fa fa-chevron-left"></i> 寻找最大值
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/09/入门/李老师家的水费/" rel="prev" title="李老师家的水费">
-                李老师家的水费 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -644,7 +623,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目引入"><span class="nav-number">1.</span> <span class="nav-text">题目引入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#例题1"><span class="nav-number">1.1.</span> <span class="nav-text">例题1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例题2"><span class="nav-number">1.2.</span> <span class="nav-text">例题2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#储存"><span class="nav-number">3.1.</span> <span class="nav-text">储存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本操作"><span class="nav-number">3.2.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查询"><span class="nav-number">3.2.1.</span> <span class="nav-text">查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并"><span class="nav-number">3.2.2.</span> <span class="nav-text">合并</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述："><span class="nav-number">1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入输出格式："><span class="nav-number">2.</span> <span class="nav-text">输入输出格式：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入格式："><span class="nav-number">2.1.</span> <span class="nav-text">输入格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出格式："><span class="nav-number">2.2.</span> <span class="nav-text">输出格式：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输入输出"><span class="nav-number">3.</span> <span class="nav-text">样例输入输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解析"><span class="nav-number">4.</span> <span class="nav-text">解析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标程"><span class="nav-number">5.</span> <span class="nav-text">标程</span></a></li></ol></div>
             
 
           </div>
@@ -849,6 +828,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
